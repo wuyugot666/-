@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>周雨安18岁生日祝福</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+            background: linear-gradient(145deg, #1a2a6c, #b21f1f, #fdbb2d);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #fff;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .age {
+            font-size: 72px;
+            font-weight: bold;
+            color: #FFD700;
+            margin: 10px 0;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin: 12px 0;
+        }
+        .name {
+            font-weight: bold;
+            color: #FFD700;
+        }
+        .emoji-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .emoji {
+            font-size: 36px;
+            margin: 0 8px;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
+            z-index: 1;
+            animation: confetti 5s linear infinite;
+        }
+        @keyframes confetti {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                top: -10px;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+                top: 100%;
+            }
+        }
+        .btn {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #333;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+        .btn:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+    <!-- 彩色纸屑背景 -->
+    <div id="confetti-container"></div>
+    
+    <div class="container">
+        <h1>周雨安 <span class="name">18岁</span> 生日快乐</h1>
+        <div class="age">18</div>
+        <p>亲爱的<span class="name">雨安</span>：</p>
+        <p>恭喜你迈入人生新阶段！</p>
+        <p>愿你的18岁充满无限可能</p>
+        
+        <div class="emoji-container">
+            <div class="emoji" style="animation-delay: 0.2s;">🎮</div>
+            <div class="emoji" style="animation-delay: 0.4s;">🏀</div>
+            <div class="emoji" style="animation-delay: 0.6s;">🚗</div>
+        </div>
+        
+        <p>前程似锦，未来可期</p>
+        <p>永远保持热爱，奔赴山海！</p>
+        
+        <button class="btn" onclick="createConfetti()">点击撒花庆祝</button>
+    </div>
+
+
+    <script>
+        // 创建彩色纸屑
+        function createConfetti() {
+            const colors = ['#FF5252', '#FFD700', '#4CAF50', '#2196F3', '#9C27B0'];
+            const container = document.getElementById('confetti-container');
+            
+            // 清除现有纸屑
+            container.innerHTML = '';
+            
+            // 创建100个纸屑
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = Math.random() * 10 + 5 + 'px';
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                container.appendChild(confetti);
+            }
+        }
+        
+        // 页面加载时自动撒花
+        window.onload = function() {
+            createConfetti();
+            
+            // 每5秒自动撒花一次
+            setInterval(createConfetti, 5000);
+        };
+    </script>
+</body>
+</html>
